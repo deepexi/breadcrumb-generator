@@ -27,8 +27,7 @@ export default {
     },
 
     curBreadcrumb () {
-      const curPath = this.$route.path.replace(/\/$/, '')
-      return this.breadcrumbData.find(breadcrumb => breadcrumb.path === curPath) || {}
+      return this.breadcrumbData[this.breadcrumbData.length - 1]
     }
   }
 }
