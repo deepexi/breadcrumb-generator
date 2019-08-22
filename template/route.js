@@ -4,7 +4,7 @@ function path2Arr(path) {
   return path.split('/').filter(p => p)
 }
 
-function matchBreadcrumbData(matchPath) {
+function matchBreadcrumbData (matchPath) {
   return path2Arr(matchPath)
     .map(path => {
       path = path.replace(/^:([^:?]+)(\?)?$/, (match, $1) => {
