@@ -35,8 +35,8 @@ describe('测试 createPathArr 函数', () => {
   test('传入多级路径', () => {
     expect(createPathArr('app/detail')).toEqual(['/app', '/app/detail'])
     expect(createPathArr('/app/detail')).toEqual(['/app', '/app/detail'])
-    expect(createPathArr('/app/detail/')).toEqual(['/app', '/app/detail'])
+    expect(createPathArr('/app/_detail/')).toEqual(['/app', '/app/_detail'])
 
-    expect(createPathArr('/app/_detail')).toEqual(['/app', '/app/_detail'])
+    expect(createPathArr('/app/detail/my-app')).toEqual(['/app', '/app/detail', '/app/detail/my-app'])
   })
 })
