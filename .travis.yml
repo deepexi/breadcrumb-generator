@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- lts/*
+install:
+- yarn
+script:
+- yarn test
+cache: yarn
+deploy:
+  provider: npm
+  email: oupenguin@gmail.com
+  api_key:
+    secure: 7d384342-99b3-4484-9d8a-119fb8e81f2a
+  on:
+    branch: master
+  skip-cleanup: true
