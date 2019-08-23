@@ -1,7 +1,7 @@
 # breadcrumb-generator
 
-[![NPM Download](https://img.shields.io/npm/dm/bcg)](https://www.npmjs.com/package/bcg)
-[![NPM Version](https://img.shields.io/npm/v/bcg)](https://www.npmjs.com/package/bcg)
+[![NPM Download](https://img.shields.io/npm/dm/%40deepexi-devops/bcg)](https://img.shields.io/npm/dm/%40deepexi-devops/bcg)
+[![NPM Version](https://img.shields.io/npm/v/%40deepexi-devops/bcg)](https://www.npmjs.com/package/bcg)
 [![Github Start](https://img.shields.io/github/stars/deepexi/d-breadcrumb?style=social)](https://github.com/deepexi/d-breadcrumb)
 
 配合 [@femessage/create-nuxt-app](https://github.com/FEMessage/create-nuxt-app) 使用的面包屑工具，快速生成页面与配置面包屑数据
@@ -18,6 +18,8 @@
 
 ```bash
 yarn global add @deepexi-devops/bcg
+# or
+npm install --global @deepexi-devops/bcg
 ```
 
 [⬆ Back to Top](#table-of-contents)
