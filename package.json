@@ -16,8 +16,7 @@
     "bcg": "lib/bcg.js"
   },
   "scripts": {
-    "test": "jest",
-    "publish": "yarn test && npm publish --access public"
+    "test": "jest"
   },
   "dependencies": {
     "boxen": "^4.1.0",
