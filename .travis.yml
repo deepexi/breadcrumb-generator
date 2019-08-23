@@ -1,13 +1,16 @@
-sudo: false
 language: node_js
 node_js:
-  - '10'
-cache: npm
+- lts/*
 install:
-  - npm i 
-before_script:
-  - npm i nyc mocha -g
+- yarn
 script:
-  - npm run cov
-after_success:
-  - bash <(curl -s https://codecov.io/bash) -f coverage.lcov
+- yarn test
+cache: yarn
+deploy:
+  provider: npm
+  email: oupenguin@gmail.com
+  api_key:
+    secure: 7d384342-99b3-4484-9d8a-119fb8e81f2a
+  on:
+    branch: master
+  skip-cleanup: true
