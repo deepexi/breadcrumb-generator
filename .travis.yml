@@ -4,7 +4,7 @@ node_js:
 install:
 - yarn
 script:
-- yarn publish
+- yarn test
 cache: yarn
 deploy:
   provider: npm
