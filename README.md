@@ -2,7 +2,7 @@
 
 [![NPM Download](https://img.shields.io/npm/dm/%40deepexi-devops/bcg)](https://img.shields.io/npm/dm/%40deepexi-devops/bcg)
 [![NPM Version](https://img.shields.io/npm/v/%40deepexi-devops/bcg)](https://www.npmjs.com/package/bcg)
-[![Bulid status](https://travis-ci.org/deepexi/d-breadcrumb.svg?branch=master)](https://travis-ci.org/deepexi/d-breadcrumb/builds/575647829?utm_source=github_status&utm_medium=notification)
+[![Bulid status](https://travis-ci.org/deepexi/d-breadcrumb.svg?branch=master)](https://travis-ci.org/deepexi/d-breadcrumb)
 [![Github Start](https://img.shields.io/github/stars/deepexi/d-breadcrumb?style=social)](https://github.com/deepexi/d-breadcrumb)
 
 配合 [@femessage/create-nuxt-app](https://github.com/FEMessage/create-nuxt-app) 使用的面包屑工具，快速生成页面与配置面包屑数据
