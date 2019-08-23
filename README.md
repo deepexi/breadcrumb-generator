@@ -17,7 +17,7 @@
 ## 安装
 
 ```bash
-yarn global add bcg
+yarn global add @deepexi-devops/bcg
 ```
 
 [⬆ Back to Top](#table-of-contents)
