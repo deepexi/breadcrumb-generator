@@ -1,6 +1,6 @@
 {
   "name": "@deepexi-devops/bcg",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Generate page and breadcrumb configuration",
   "keywords": [
     "breadcrumb",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/deepexi/d-breadcrumb"
+    "url": "https://github.com/deepexi/breadcrumb-generator"
   },
   "bin": {
     "bcg": "lib/bcg.js"
