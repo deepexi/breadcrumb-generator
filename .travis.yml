@@ -8,9 +8,9 @@ script:
 cache: yarn
 deploy:
   provider: npm
-  email: oupenguin@gmail.com
+  email: git@hexie.uu.me
   api_key:
-    secure: 7d384342-99b3-4484-9d8a-119fb8e81f2a
+    secure:  e8c56ceb-86f6-47ef-96ba-019ef767a0f6
   on:
     branch: master
   skip-cleanup: true
