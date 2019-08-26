@@ -3,7 +3,7 @@
     <el-breadcrumb separator="/">
       <el-breadcrumb-item
         v-for="(item, index) in breadcrumbData"
-        :to="item.clickable ? item.path : ''"
+        :to="item.clickable ? replacePath(item.path) : ''"
         :key="index">
         {{ item.name }}
       </el-breadcrumb-item>
@@ -28,6 +28,18 @@ export default {
 
     curBreadcrumb () {
       return this.breadcrumbData[this.breadcrumbData.length - 1]
+    }
+  },
+
+  methods: {
+    replacePath (path) {
+      return path
+        .split('/')
+        .map(item =>
+          item.startsWith('_')
+           ? this.$route.params[item.substring(1)]
+              : item)
+        .join('/')
     }
   }
 }
