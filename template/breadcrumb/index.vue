@@ -12,18 +12,20 @@
 </template>
 
 <script>
-import breadcrumbs from "./breadcrumb.config"
+import {mapState} from 'vuex'
 
 export default {
   name: 'Breadcrumb',
 
   computed: {
-    isBreadcrumbShow () {
-      return this.breadcrumbData && this.breadcrumbData.length && this.curBreadcrumb.isShow
+    ...mapState('breadcrumb',['breadcrumbData']),
+    
+    breadcrumbs () {
+      return Array.isArray(this.breadcrumbData) ? this.breadcrumbData.filter(crumb=>crumb.isShow) : []
     },
 
-    breadcrumbData () {
-      return this.$store.state.breadcrumb.breadcrumbData
+    isBreadcrumbShow () {
+      return this.breadcrumbs && this.breadcrumbs.length
     },
 
     curBreadcrumb () {
