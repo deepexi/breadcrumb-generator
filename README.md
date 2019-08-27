@@ -148,6 +148,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
 <table>
-<tr><td align="center"><a href="http://levy.work"><img src="https://avatars1.githubusercontent.com/u/26338853?s=460&v=4" width="100px;" alt="OuZuYu"/><br /><sub><b>OuZuYu</b></sub></a></td></tr></table>
+<tr><td align="center"><a href="https://github.com/OuZuYu"><img src="https://avatars1.githubusercontent.com/u/26338853?s=460&v=4" width="100px;" alt="OuZuYu"/><br /><sub><b>OuZuYu</b></sub></a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
