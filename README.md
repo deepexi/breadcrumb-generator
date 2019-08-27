@@ -2,7 +2,7 @@
 
 [![NPM Download](https://img.shields.io/npm/dm/%40deepexi-devops/bcg)](https://img.shields.io/npm/dm/%40deepexi-devops/bcg)
 [![NPM Version](https://img.shields.io/npm/v/%40deepexi-devops/bcg)](https://www.npmjs.com/package/bcg)
-[![Bulid status](https://travis-ci.org/deepexi/d-breadcrumb.svg?branch=master)](https://travis-ci.org/deepexi/d-breadcrumb)
+[![Bulid status](https://travis-ci.org/deepexi/breadcrumb-generator.svg?branch=master)](https://travis-ci.org/deepexi/breadcrumb-generator)
 [![Github Start](https://img.shields.io/github/stars/deepexi/d-breadcrumb?style=social)](https://github.com/deepexi/d-breadcrumb)
 
 配合 [@femessage/create-nuxt-app](https://github.com/FEMessage/create-nuxt-app) 使用的面包屑工具，快速生成页面与配置面包屑数据
@@ -110,11 +110,32 @@ bcg new app/detail -b src/views
 
 有时候需要动态设置面包屑数据（比如使用动态路由时）
 
-由于面包屑数据是通过 vuex 管理的，所以设置动态面包屑也是非常方便，仅需调用设置面包屑数据的 mutation 设置相应数据即可
+由于面包屑数据是通过 vuex 管理的，所以动态设置也是非常方便，仅需调用设置面包屑数据的 mutation 设置相应数据即可
 
-如下例子展示加一个首页的面包屑数据
+- 修改某个面包屑显示名称
+
+假设有一个参数为 type 的动态路由，我们生成这个页面，并且设置面包屑名称为 "动态_类型"
+
+![new-_type](http://tva1.sinaimg.cn/large/007X8olVly1g6b4fg7v6fj30ge0ay3zb.jpg)
+
+在刚刚生成的 _type.vue 中动态设置这个名称
+
+![set-type](http://tva1.sinaimg.cn/large/007X8olVly1g6b43bexksj30jw09g0t0.jpg)
+
+查看效果
+
+![set-type-result](http://tva1.sinaimg.cn/large/007X8olVly1g6b43r95d6j30d2086mx8.jpg)
+
+
+- 修改整个面包屑数组
+
+我们也可以动态修改整个面包屑数组
+
+这么做的话有一点需要注意：**就是要将原数据复制一份进行修改，否则就变成直接修改 state 了，将会报 vuex 相关错误**
 
 ![set-breadcrumb-data](http://tva1.sinaimg.cn/large/0060lm7Tly1g658ppwul8j30r10f0ta7.jpg)
+
+查看效果
 
 ![set-breadcrumb-data-result](http://tva1.sinaimg.cn/large/0060lm7Tly1g658teb09bj30ns09qmy0.jpg)
 
