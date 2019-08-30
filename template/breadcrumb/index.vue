@@ -3,6 +3,7 @@
     <el-breadcrumb separator="/">
       <el-breadcrumb-item
         v-for="(item, index) in breadcrumbData"
+        v-if="item.isCurShow"
         :to="item.clickable ? replacePath(item.path) : ''"
         :key="index">
         {{ item.name }}
