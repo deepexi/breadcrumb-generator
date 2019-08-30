@@ -59,6 +59,7 @@ bcg new app/detail -b src/views
   [{
     "clickable": false, // 是否可点击跳转
     "isShow": true, // 该路径下是否显示面包屑
+    "isCurrentShow": true, // 该路径下是否当前层级面包屑
     "name": "应用", // 显示的面包屑名称
     "path": "/app" // 路径
   }]
@@ -92,13 +93,13 @@ bcg new app/detail -b src/views
 
 第四步：生成一个页面
 
-![new-command](http://tva1.sinaimg.cn/large/0060lm7Tly1g654fvu5w5j30ht0c575f.jpg)
+![new-command](http://tva1.sinaimg.cn/large/007X8olVly1g6hyfutt7gj30lh0bddgh.jpg)
 
 可以看到页面与配置已经生成了
 
 ![page](http://tva1.sinaimg.cn/large/0060lm7Tly1g654gryzazj308f0350sj.jpg)
 
-![comfiguration](http://tva1.sinaimg.cn/large/0060lm7Tly1g654hhnd4uj30ea0hcaay.jpg)
+![comfiguration](http://tva1.sinaimg.cn/large/007X8olVly1g6hy38uo2fj30kl0j4wf2.jpg)
 
 第五步：启动项目，打开 /app/detail/my-app 查看效果
 
@@ -116,7 +117,7 @@ bcg new app/detail -b src/views
 
 假设有一个参数为 type 的动态路由，我们生成这个页面，并且设置面包屑名称为 "动态_类型"
 
-![new-_type](http://tva1.sinaimg.cn/large/007X8olVly1g6b4fg7v6fj30ge0ay3zb.jpg)
+![new-_type](http://tva1.sinaimg.cn/large/007X8olVly1g6hyhy8phdj30i90a4dg7.jpg)
 
 在刚刚生成的 _type.vue 中动态设置这个名称
 
@@ -133,7 +134,7 @@ bcg new app/detail -b src/views
 
 这么做的话有一点需要注意：**就是要将原数据复制一份进行修改，否则就变成直接修改 state 了，将会报 vuex 相关错误**
 
-![set-breadcrumb-data](http://tva1.sinaimg.cn/large/0060lm7Tly1g658ppwul8j30r10f0ta7.jpg)
+![set-breadcrumb-data](http://tva1.sinaimg.cn/large/007X8olVly1g6hya8zvjcj30sj0eamxr.jpg)
 
 查看效果
 
