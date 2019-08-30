@@ -12,7 +12,7 @@ describe('测试 mutations', () => {
       {
         "clickable": false,
         "isShow": true,
-        "isCurShow": true,
+        "isCurrentShow": true,
         "name": "应用",
         "path": "/app"
       }
@@ -27,7 +27,7 @@ describe('测试 mutations', () => {
       breadcrumbData: [{
         "clickable": false,
         "isShow": true,
-        "isCurShow": true,
+        "isCurrentShow": true,
         "name": "动态_类型",
         "path": "/_type"
       }]
@@ -40,7 +40,7 @@ describe('测试 mutations', () => {
     expect(state.breadcrumbData).toEqual([{
       "clickable": false,
       "isShow": true,
-      "isCurShow": true,
+      "isCurrentShow": true,
       "name": "类型一",
       "path": "/_type"
     }])
@@ -51,7 +51,7 @@ describe('测试 mutations', () => {
       breadcrumbData: [{
         "clickable": false,
         "isShow": true,
-        "isCurShow": true,
+        "isCurrentShow": true,
         "name": "应用",
         "path": "/app"
       }]
@@ -64,7 +64,7 @@ describe('测试 mutations', () => {
     expect(state.breadcrumbData).toEqual([{
       "clickable": false,
       "isShow": true,
-      "isCurShow": true,
+      "isCurrentShow": true,
       "name": "应用",
       "path": "/app"
     }])
@@ -75,13 +75,13 @@ describe('测试 mutations', () => {
       breadcrumbData: [{
         "clickable": false,
         "isShow": true,
-        "isCurShow": true,
+        "isCurrentShow": true,
         "name": "动态_类型",
         "path": "/_type"
       }, {
         "clickable": false,
         "isShow": true,
-        "isCurShow": true,
+        "isCurrentShow": true,
         "name": "动态_类型",
         "path": "/_type/_type"
       }]
@@ -94,13 +94,13 @@ describe('测试 mutations', () => {
     expect(state.breadcrumbData).toEqual([{
       "clickable": false,
       "isShow": true,
-      "isCurShow": true,
+      "isCurrentShow": true,
       "name": "类型一",
       "path": "/_type"
     }, {
       "clickable": false,
       "isShow": true,
-      "isCurShow": true,
+      "isCurrentShow": true,
       "name": "动态_类型",
       "path": "/_type/_type"
     }])

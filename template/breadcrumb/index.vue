@@ -19,7 +19,7 @@ export default {
 
   computed: {
     filterBreadcrumbData() {
-      return this.breadcrumbData.filter(item => item.isCurShow)
+      return this.breadcrumbData.filter(item => item.isCurrentShow)
     },
 
     isBreadcrumbShow () {
