@@ -2,7 +2,7 @@
   <div class="bcg-breadcrumb" v-if="isBreadcrumbShow">
     <el-breadcrumb separator="/">
       <el-breadcrumb-item
-        v-for="(item, index) in breadcrumbData"
+        v-for="(item, index) in displayedBreadcrumbData"
         :to="item.clickable ? replacePath(item.path) : ''"
         :key="index">
         {{ item.name }}
@@ -18,6 +18,10 @@ export default {
   name: 'Breadcrumb',
 
   computed: {
+    displayedBreadcrumbData() {
+      return this.breadcrumbData.filter(item => item.isCurrentShow)
+    },
+
     isBreadcrumbShow () {
       return this.breadcrumbData && this.breadcrumbData.length && this.curBreadcrumb.isShow
     },
