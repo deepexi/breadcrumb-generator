@@ -149,6 +149,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
 <table>
-<tr><td align="center"><a href="https://github.com/OuZuYu"><img src="https://avatars1.githubusercontent.com/u/26338853?s=460&v=4" width="100px;" alt="OuZuYu"/><br /><sub><b>OuZuYu</b></sub></a></td></tr></table>
+<tr>
+  <td align="center"><a href="https://github.com/OuZuYu"><img src="https://avatars1.githubusercontent.com/u/26338853?s=460&v=4" width="100px;" alt="OuZuYu"/><br /><sub><b>OuZuYu</b></sub></a></td>
+  <td align="center"><a href="https://github.com/wuyanping"><img src=https://avatars1.githubusercontent.com/u/24385361?s=460&v=4" width="100px;" alt="wuyanping"/><br /><sub><b>wuyanping</b></sub></a></td>
+ </tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
