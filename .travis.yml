@@ -8,10 +8,6 @@ script:
   - echo "Testing Started ..."
   - yarn test
   - echo "Testing Finished."
-  - echo "NPM Deploying Started ..."
-  - yarn --version
-  - yarn build
-  - echo "NPM Building Finished."
 cache: yarn
 deploy:
   provider: npm
