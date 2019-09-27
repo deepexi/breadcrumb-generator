@@ -11,5 +11,11 @@ export const mutations = {
     let curBreadcrumb = state.breadcrumbData.find(breadcrumb => breadcrumb.name === oldName)
 
     curBreadcrumb && (curBreadcrumb.name = newName)
+  },
+  setBreadcrumbNameByPath(state, {path, name}) {
+    let curBreadcrumb = state.breadcrumbData.find(
+      breadcrumb => breadcrumb.path === path
+    )
+    curBreadcrumb && (curBreadcrumb.name = name)
   }
 }

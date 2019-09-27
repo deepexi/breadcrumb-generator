@@ -1,6 +1,6 @@
 import { mutations } from '../template/breadcrumb'
 
-const { setBreadcrumb, setBreadcrumbName} = mutations
+const { setBreadcrumb, setBreadcrumbName, setBreadcrumbNameByPath} = mutations
 
 describe('测试 mutations', () => {
   test('测试 setBreadcrumb', () => {
@@ -103,6 +103,90 @@ describe('测试 mutations', () => {
       "isCurrentShow": true,
       "name": "动态_类型",
       "path": "/_type/_type"
+    }])
+  })
+
+  test('测试 setBreadcrumbNameByPath 能找到相应面包屑数据的情况', () => {
+    const state = {
+      breadcrumbData: [{
+        "clickable": false,
+        "isShow": true,
+        "isCurrentShow": true,
+        "name": "",
+        "path": "/_type"
+      }]
+    }
+
+    setBreadcrumbNameByPath(state, {
+      path: '/_type',
+      name: '类型一'
+    })
+    expect(state.breadcrumbData).toEqual([{
+      "clickable": false,
+      "isShow": true,
+      "isCurrentShow": true,
+      "name": "类型一",
+      "path": "/_type"
+    }])
+  })
+
+  test('测试 setBreadcrumbNameByPath 找不到相应面包屑数据的情况', () => {
+    const state = {
+      breadcrumbData: [{
+        "clickable": false,
+        "isShow": true,
+        "isCurrentShow": true,
+        "name": "应用",
+        "path": "/app"
+      }]
+    }
+
+    setBreadcrumbNameByPath(state, {
+      path: '/_type',
+      name: '类型一'
+    })
+    expect(state.breadcrumbData).toEqual([{
+      "clickable": false,
+      "isShow": true,
+      "isCurrentShow": true,
+      "name": "应用",
+      "path": "/app"
+    }])
+  })
+
+  test('测试 setBreadcrumbNameByPath 有多个相应面包屑数据的情况', () => {
+    const state = {
+      breadcrumbData: [{
+        "clickable": false,
+        "isShow": true,
+        "isCurrentShow": true,
+        "name": "动态_类型",
+        "path": "/_type"
+      }, {
+        "clickable": false,
+        "isShow": true,
+        "isCurrentShow": true,
+        "name": "",
+        "path": "/_type"
+      }]
+    }
+
+    setBreadcrumbNameByPath(state, {
+      path: '/_type',
+      name: '类型一'
+    })
+    expect(state.breadcrumbData).toEqual([{
+      "clickable": false,
+      "isShow": true,
+      "isCurrentShow": true,
+      "name": "类型一",
+      "path": "/_type"
+    }, {
+      "clickable": false,
+      "isShow": true,
+      "isCurrentShow": true,
+      "name": "",
+      "path": "/_type"
     }])
   })
 })
