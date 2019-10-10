@@ -20,13 +20,12 @@ export const mutations = {
   },
   setBreadcrumbNameByParams(state, routeParamsMaps) {
     state.breadcrumbData.forEach(item => {
-      let lastOne = item.path.split("/").pop()
-      let reg = /_(.*)+/gi
-      let result = reg.exec(lastOne)
+      const lastOne = item.path.split("/").pop()
+      const reg = /_(.*)+/gi
+      const result = reg.exec(lastOne)
       if (result) {
-        let key = result[1]
-        let keys = Object.keys(routeParamsMaps)
-        if (keys.includes(key)) {
+        const key = result[1]
+        if (Object.keys(routeParamsMaps).includes(key)) {
           item.name = routeParamsMaps[key]
         }
       }
