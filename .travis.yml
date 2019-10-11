@@ -12,7 +12,7 @@ cache: yarn
 deploy:
   provider: npm
   email: git@hexie.uu.me
-  api_key: "$NPM_TOKEN"
+  api_key: $NPM_TOKEN
   skip_cleanup: true
   on:
     branch: master
