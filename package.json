@@ -1,6 +1,6 @@
 {
   "name": "@deepexi-devops/bcg",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "Generate page and breadcrumb configuration",
   "keywords": [
     "breadcrumb",

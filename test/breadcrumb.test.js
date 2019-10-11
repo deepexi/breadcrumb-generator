@@ -1,6 +1,6 @@
 import { mutations } from '../template/breadcrumb'
 
-const { setBreadcrumb, setBreadcrumbName, setBreadcrumbNameByPath} = mutations
+const { setBreadcrumb, setBreadcrumbName, setBreadcrumbNameByPath,setBreadcrumbNameByParams} = mutations
 
 describe('测试 mutations', () => {
   test('测试 setBreadcrumb', () => {
@@ -188,5 +188,88 @@ describe('测试 mutations', () => {
       "name": "",
       "path": "/_type"
     }])
+  })
+
+  test("测试 setBreadcrumbNameByParams 不能找到相应面包屑数据的情况", () => {
+    const state = {
+      breadcrumbData: [
+        {
+          clickable: false,
+          isShow: true,
+          isCurrentShow: true,
+          name: "",
+          path: "/_type"
+        }
+      ]
+    }
+
+    setBreadcrumbNameByParams(state, {
+      id: "唯一id"
+    })
+    expect(state.breadcrumbData).toEqual([
+      {
+        clickable: false,
+        isShow: true,
+        isCurrentShow: true,
+        name: "",
+        path: "/_type"
+      }
+    ])
+  })
+
+  test("测试 setBreadcrumbNameByParams 能找到相应面包屑数据的情况", () => {
+    const state = {
+      breadcrumbData: [
+        {
+          clickable: false,
+          isShow: true,
+          isCurrentShow: true,
+          name: "原类型",
+          path: "/_type"
+        },
+        {
+          clickable: false,
+          isShow: true,
+          isCurrentShow: true,
+          name: "",
+          path: "/_type/test"
+        },
+        {
+          clickable: false,
+          isShow: true,
+          isCurrentShow: true,
+          name: "动态id",
+          path: "/_type/test/_id"
+        }
+      ]
+    }
+
+    setBreadcrumbNameByParams(state, {
+      type: "新类型",
+      id: "唯一id"
+    })
+    expect(state.breadcrumbData).toEqual([
+      {
+        clickable: false,
+        isShow: true,
+        isCurrentShow: true,
+        name: "新类型",
+        path: "/_type"
+      },
+      {
+        clickable: false,
+        isShow: true,
+        isCurrentShow: true,
+        name: "",
+        path: "/_type/test"
+      },
+      {
+        clickable: false,
+        isShow: true,
+        isCurrentShow: true,
+        name: "唯一id",
+        path: "/_type/test/_id"
+      }
+    ])
   })
 })
