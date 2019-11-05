@@ -1,5 +1,4 @@
 import qs from 'qs'
-import _cloneDeep from 'lodash/cloneDeep'
 import breadcrumbs from '@/components/breadcrumb/breadcrumb.config.json'
 
 function path2Arr(path) {
@@ -26,20 +25,22 @@ function matchBreadcrumbData(matchPath) {
       return path
     })
     .map(path => {
-      const item = breadcrumbs.find(bread => bread.path === path)
-      if (item) {
-        return item
-      }
-      return {
+      const item = breadcrumbs.find(bread => {
+        // path 有可能拼接了 query 需要去掉才能与 to.matched 分割出的 path 匹配上
+        bread.path = bread.path.replace(/\?\S+/, '')
+        return bread.path === path
+      })
+
+      return item || {
         name: path.split('/').pop(),
         path,
         clickable: false,
-        isShow: true
+        isShow: true,
       }
     })
 }
 
-export default ({app, store, query}) => {
+export default ({app, store}) => {
   app.router.beforeEach((to, from, next) => {
     const toPathArr = path2Arr(to.path)
     const toPathArrLength = toPathArr.length
@@ -54,7 +55,7 @@ export default ({app, store, query}) => {
       }
     }
 
-    const breadcrumbData = _cloneDeep(matchBreadcrumbData(matchPath))
+    const breadcrumbData = matchBreadcrumbData(matchPath)
 
     const query = to.query
     if (Object.keys(query).length) {
