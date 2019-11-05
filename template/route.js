@@ -35,7 +35,7 @@ function matchBreadcrumbData(matchPath) {
         name: path.split('/').pop(),
         path,
         clickable: false,
-        isShow: true,
+        isShow: true
       }
     })
 }
