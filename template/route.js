@@ -1,10 +1,12 @@
+import qs from 'qs'
+import _cloneDeep from 'lodash/cloneDeep'
 import breadcrumbs from '@/components/breadcrumb/breadcrumb.config.json'
 
 function path2Arr(path) {
   return path.split('/').filter(p => p)
 }
 
-function matchBreadcrumbData (matchPath) {
+function matchBreadcrumbData(matchPath) {
   return path2Arr(matchPath)
     .map(path => {
       path = path.replace(/^:([^:?]+)(\?)?$/, (match, $1) => {
@@ -13,7 +15,6 @@ function matchBreadcrumbData (matchPath) {
       return '/' + path
     })
     .map((path, index, paths) => {
-
       // 第 0 个不需拼接
       if (index) {
         let result = ''
@@ -38,7 +39,7 @@ function matchBreadcrumbData (matchPath) {
     })
 }
 
-export default ({ app, store }) => {
+export default ({app, store, query}) => {
   app.router.beforeEach((to, from, next) => {
     const toPathArr = path2Arr(to.path)
     const toPathArrLength = toPathArr.length
@@ -53,7 +54,15 @@ export default ({ app, store }) => {
       }
     }
 
-    const breadcrumbData = matchBreadcrumbData(matchPath)
+    const breadcrumbData = _cloneDeep(matchBreadcrumbData(matchPath))
+
+    const query = to.query
+    if (Object.keys(query).length) {
+      const queryStr = qs.stringify(query)
+      const lastIndex = breadcrumbData.length - 1
+      const lastPath = breadcrumbData[lastIndex].path
+      breadcrumbData[lastIndex].path = `${lastPath}?${queryStr}`
+    }
 
     store.commit('breadcrumb/setBreadcrumb', breadcrumbData)
     next()
